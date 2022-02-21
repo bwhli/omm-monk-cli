@@ -37,9 +37,9 @@ poetry install
 monk submit-token-transfer VALUE TOKEN_CONTRACT TO_ADDRESS
 ```
 
-* VALUE: The amount of tokens you want to transfer (e.g. 1 OMM = 1, 10 bnUSD = 10).
-* TOKEN_CONTRACT: The contract address of the token you want to transfer.
-* TO_ADDRESS: The destination address you want to transfer tokens to.
+* `VALUE`: The amount of tokens you want to transfer (e.g. 1 OMM = 1, 10 bnUSD = 10).
+* `TOKEN_CONTRACT`: The contract address of the token you want to transfer.
+* `TO_ADDRESS`: The destination address you want to transfer tokens to.
 
 ### Confirm Transaction
 
@@ -47,4 +47,4 @@ monk submit-token-transfer VALUE TOKEN_CONTRACT TO_ADDRESS
 monk confirm-transaction TRANSACTION_ID
 ```
 
-* TRANSACTION_ID: The ID number of the transaction you want to confirm.
+* `TRANSACTION_ID`: The ID number of the transaction you want to confirm.
