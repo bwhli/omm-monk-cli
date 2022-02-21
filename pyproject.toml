@@ -4,10 +4,15 @@ version = "0.1.0"
 description = ""
 authors = ["Brian Li <brian@brianli.com>"]
 
+[tool.poetry.scripts]
+monk = "omm_monk_cli.main:app"
+
 [tool.poetry.dependencies]
 python = "^3.10"
 iconsdk = "^2.0.0"
 rich = "^11.2.0"
+typer = {extras = ["all"], version = "^0.4.0"}
+python-dotenv = "^0.19.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
