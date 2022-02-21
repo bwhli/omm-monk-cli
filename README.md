@@ -29,6 +29,11 @@ poetry shell
 poetry install
 ```
 
+### Configure ICX Wallet
+
+1. Open omm-monk-cli/env in a text editor and input your private key after `WALLET_PK=`.
+2. Rename env to .env.
+
 ## Commands
 
 ### Submit Token Transfer

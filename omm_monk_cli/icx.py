@@ -17,7 +17,8 @@ class Icx:
 
     ICON_SERVICE = IconService(HTTPProvider("https://ctz.solidwallet.io", 3))
 
-    WALLET = KeyWallet.load(bytes.fromhex(os.getenv("WALLET_PK")))
+    WALLET_PK = os.getenv("WALLET_PK")
+    WALLET = KeyWallet.load(bytes.fromhex(WALLET_PK))
     WALLET_ADDRESS = WALLET.get_address()
 
     MONK_MULTISIG_CONTRACT = "cx0c436b120f3eabeb538b14fd30505917c3f35ee0"
