@@ -26,8 +26,18 @@ def submit_token_transfer(value: int, token_contract: str, to_address: str):
     params = {
         "_destination": token_contract,
         "_method": "transfer",
-        "_params": json.dumps({"_to": to_address, "_value": value * (10**exa)}),
+        "_params": json.dumps(
+            [
+                {
+                    "name": "_to",
+                    "type": "Address",
+                    "value": to_address,
+                },
+                {"name": "_value", "type": "int", "value": f"{value * 10**exa}"},
+            ]
+        ),
     }
+
     tx_hash = icx.call_tx(icx.MONK_MULTISIG_CONTRACT, "submitTransaction", params)
     typer.echo(tx_hash)
 
@@ -37,5 +47,9 @@ def confirm_transaction(transaction_id: int):
     """
     Calls the confirmTransaction method.
     """
-    tx_hash = icx.call_tx(icx.MONK_MULTISIG_CONTRACT, "confirmTransaction", {"_transactionId": transaction_id})
+    tx_hash = icx.call_tx(
+        icx.MONK_MULTISIG_CONTRACT,
+        "confirmTransaction",
+        {"_transactionId": transaction_id},
+    )
     typer.echo(tx_hash)
